@@ -232,6 +232,7 @@ bool GraphManager::updateCloudOrigin(Node* node)
     node->pc_col->sensor_origin_.head<3>() = v->estimate().translation().cast<float>();
     node->pc_col->sensor_orientation_ =  v->estimate().rotation().cast<float>();
     //node->header_.frame_id = ParameterServer::instance()->get<std::string>("fixed_frame_name");
+    return true;
 }
 
 void GraphManager::saveOctomap(QString filename, bool threaded){
